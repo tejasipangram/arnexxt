@@ -1,0 +1,609 @@
+/* .App {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+#uiError {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin: 60px 5px 0px 15px;
+  width: 30%;
+  float: right;
+  border-bottom: 5px solid black;
+  /* z-index: 99999; */
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.control-buttons {
+  position: relative;
+  z-index: 1000;
+}
+
+.container_wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+}
+
+.Loading_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main_page_header {
+  padding: 24px;
+  background-color: white;
+  border-bottom: 2px dashed lightgray;
+}
+
+@media (max-width: 380px) {
+  .main_page_header {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.card_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 50px 20px;
+}
+
+#splashScreen {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  /* z-index: 100000; */
+}
+
+#splashScreen.hidden {
+  display: none;
+}
+
+#overlay {
+  position: absolute;
+  left: 0%;
+  top: 88.5%;
+  right: 0%;
+  padding: 1em;
+  opacity: 0.5;
+  border-top: 0px solid #ffffff55;
+  color: white;
+  text-align: center;
+
+}
+
+
+#overlay_button {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 12px;
+  opacity: 1;
+  border-top: 0px solid #ffffff55;
+  border-radius: 6px;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+/* #overlay_guid{
+  position: absolute; 
+  border-radius: 10px; 
+  left: 48%;
+  right: 49%; 
+  top: 65%; 
+  z-index: 99999;
+} */
+
+#overlay_branding {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  padding: 12px;
+  opacity: 1;
+  border-top: 0px solid #ffffff55;
+  border-radius: 6px;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#overlay_help {
+  position: absolute;
+  right: 14px;
+  top: 18px;
+  height: 44px;
+  width: 44px;
+  opacity: 1;
+  /* border-top: 0px solid #ee1e1e55; */
+  border-radius: 12px;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  padding: 9px;
+  background: white;
+  cursor: pointer;
+}
+
+#overlay_help_enquiry {
+  cursor: pointer;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  opacity: 1;
+  background-color: #3d2fa9;
+  border-radius: 16px;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.helperLogo {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  border-radius: 16px;
+}
+
+.text_helper {
+  color: black;
+  background: white;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+#overlay_share {
+  cursor: pointer;
+  position: absolute;
+  right: 68px;
+  top: 17px;
+  opacity: 1;
+  border-top: 0px solid #ee1e1e55;
+  border-radius: 12px;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  z-index: 99999;
+}
+
+.overlay_button {
+  /* position: absolute; */
+  /* left: 14px; */
+  /* top: 14px; */
+  padding: 12px;
+  width: 70px;
+  opacity: 1;
+  border-top: 0px solid #ffffff55;
+  border-radius: 6px;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* z-index: 99999; */
+
+}
+
+#overlay_dialog {
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  opacity: 1;
+
+  /* border-radius: 16px; */
+  color: white;
+  background: rgba(0, 0, 0, 0.671);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+
+}
+
+.show {
+  display: flex !important;
+}
+
+.hiddens {
+  display: none !important;
+}
+
+
+#overlay_dialog.hidden {
+  display: none;
+}
+
+.close {
+  font-size: larger;
+}
+
+.close:hover {
+  color: red;
+}
+
+
+.tutorial_box {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid white; */
+  padding: 8px;
+  border-radius: 16px;
+  gap: 10px;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(50px);
+}
+
+#type_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#type_bar p {
+  padding: 2px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: center;
+}
+
+.list {
+  max-height: 80vh;
+  max-width: 400px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid white; */
+  padding: 8px;
+  gap: 10px;
+  max-width: 400px;
+  /* background: rgba(0, 0, 0, 0.45); */
+  /* backdrop-filter: blur(50px);  */
+}
+
+.list::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+.list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.233);
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scrollbar thumb */
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scrollbar thumb on hover */
+}
+
+#type_bar p:hover {
+  background: white;
+  color: black;
+}
+
+
+.active {
+  font-weight: bold;
+  background: rgba(11, 186, 192, 0.432);
+}
+
+#content_area {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+
+
+#content_area:hover {
+  background: white;
+  color: black;
+}
+
+#title_bar {
+  display: flex;
+  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#image_section {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+  height: 200px;
+}
+
+#image_section img {
+  /* width: 100%; */
+  height: 200px;
+}
+
+#tutorial_section {
+  padding: 8px 0;
+}
+
+#tutorial_section p {
+  font-size: 14px;
+}
+
+#button_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#button_section button {
+  width: 70px;
+  padding: 2px;
+}
+
+#left_button {
+  width: 70px;
+}
+
+#overlay_button.hidden {
+  display: none;
+}
+
+#overlay_branding.hidden {
+  display: none;
+}
+
+
+#webcam {
+  opacity: 1;
+  position: fixed;
+  background-size: 100% 100%;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+
+.card_wrapper>.card {
+  width: 300px;
+  padding: 24px;
+  height: 150px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card_wrapper>.card>.title {
+  margin-bottom: 10px;
+}
+
+.card_wrapper>.card>.description {
+  font-size: 14px;
+}
+
+.startButton {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #3d2fa9;
+  color: white;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  max-width: 380px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.main_page_container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_page_logo {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 80px;
+}
+
+
+
+#message {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.495);
+  /* opacity: 0.5; */
+  border-top: 0px solid #ffffff55;
+  color: white;
+  text-align: center;
+}
+
+#message-text {
+  opacity: 1;
+  color: white;
+}
+
+#uiScanning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  #uiScanning .inner {
+    width: 50vh;
+    height: 50vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  #uiScanning .inner {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+#uiScanning .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background:
+    linear-gradient(to right, white 10px, transparent 10px) 0 0,
+    linear-gradient(to right, white 10px, transparent 10px) 0 100%,
+    linear-gradient(to left, white 10px, transparent 10px) 100% 0,
+    linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
+    linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
+    linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
+    linear-gradient(to top, white 10px, transparent 10px) 0 100%,
+    linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+}
+
+#uiScanning.hidden {
+  display: none;
+}
+
+#scanIco {
+  opacity: 1;
+  position: absolute;
+  bottom: 5%;
+  right: 4%;
+  width: 30px;
+}
+
+#scanLogo {
+  position: absolute;
+  opacity: 1;
+  bottom: 0%;
+  align-self: center;
+  width: 45%;
+}
+
+#errorResolveBG li {
+  padding: 5px;
+}
+
+#uiScanning .inner .scanline {
+  position: absolute;
+  width: 90%;
+  height: 10px;
+  background: white;
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+
+  0%,
+  100% {
+    top: 3%
+  }
+
+  50% {
+    top: calc(97% - 10px)
+  }
+}
+
+#uiScanningText {
+  color: #ffffff;
+  font-size: larger;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+.error {
+  color: #f44336;
+}
+
+/* #shareTray {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+  } */
