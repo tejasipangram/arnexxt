@@ -484,7 +484,9 @@ export default function Test({ data, brandLogo, loadingScreen, helperLogo }) {
 
         resumeTitle.setAttribute(
           "value",
-          trimAndUppercaseText(element.resumeData[0].title, 35)
+          element?.resumeData
+            ? trimAndUppercaseText(element?.resumeData[0]?.title, 35)
+            : ""
         );
         resumeTitle.setAttribute("wrap-count", "45");
         resumeTitle.setAttribute(
@@ -508,7 +510,10 @@ export default function Test({ data, brandLogo, loadingScreen, helperLogo }) {
         resumeDescription.setAttribute("rotation", "0 0 0");
         resumeDescription.setAttribute(
           "value",
-          trimText(element.resumeData[0].description, DESCRIPTION_LIMIT)
+
+          element.resumeData
+            ? trimText(element.resumeData[0].description, DESCRIPTION_LIMIT)
+            : ""
         );
         resumeDescription.setAttribute("wrap-count", "69");
         // resumeDescription.setAttribute("font", "https://cdn.aframe.io/fonts/Aileron-Semibold.fnt");
